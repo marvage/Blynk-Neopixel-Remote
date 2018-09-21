@@ -1,5 +1,6 @@
 //A arudino sketch that uses Blynk to control a wifi-enabled LED neopixel stirp
-//THe strip is powered and web enabled by an ESP8266 dev board.
+//THe strip is powered and web enabled by a Node MCU ESP8266 dev board.
+//Blynk libraries must be manually installed.
 
 
 #include <Adafruit_NeoPixel.h>
@@ -7,18 +8,18 @@
 #include <BlynkSimpleEsp8266.h>
 #include <ESP8266WiFi.h>
 
-#define PIN D2
-#define NUMPIXELS 30
+#define PIN D2 //data pin on the NodeMCU board
+#define NUMPIXELS 30 //number of pixels in LED strip
 #define BLYNK_PRINT Serial
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
 void setup()
 {
 Serial.begin(9600);
-Blynk.begin("71b217dfc24b4fc8841224a42786173e", "Hasselhoff24", "02999431");
+Blynk.begin("your auth code here", "your network SSID ", "your network password");
 pixels.begin();
 }
-BLYNK_WRITE(V2)
+BLYNK_WRITE(V2) //virtual pin - a Blynk convention to manage writing to the Node data pin
 {
 
 int R = param[0].asInt();
