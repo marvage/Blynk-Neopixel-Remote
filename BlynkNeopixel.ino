@@ -1,7 +1,7 @@
-//A arudino sketch that uses Blynk to control a wifi-enabled LED neopixel stirp
+//A Arudino sketch that uses Blynk to control a wifi-enabled LED neopixel strip.
 //THe strip is powered and web enabled by a Node MCU ESP8266 dev board.
-//Blynk libraries must be manually installed.
-
+//Blynk libraries for Arduino must be manually installed from http://www.blynk.cc.
+//Built with input from  https://www.instructables.com/id/IOT-ESP-8266-Nodemcu-Controlling-Neopixel-Ws2812-L/.
 
 #include <Adafruit_NeoPixel.h>
 #include <SPI.h>
